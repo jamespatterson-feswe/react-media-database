@@ -1,18 +1,16 @@
 import React from 'react';
-import './App.scss';
+import './MediaDatabase.component.scss';
 
 import { Header, Footer } from './components/index';
 
-function App() {
+function MediaDatabase() {
   return (
     <div>
       <Header />
-      <p>
-        App works!
-      </p>
+      <p>MediaDatabase works!</p>
       <Footer />
     </div>
   );
 }
 
-export { App };
+export { MediaDatabase };

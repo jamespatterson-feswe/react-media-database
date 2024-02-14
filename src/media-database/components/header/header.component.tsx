@@ -5,9 +5,7 @@ import './header.component.scss';
 function Header() {
   return (
     <div>
-      <p>
-        Header works!
-      </p>
+      <p>Header works!</p>
     </div>
   );
 }

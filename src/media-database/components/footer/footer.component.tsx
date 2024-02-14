@@ -5,9 +5,7 @@ import './footer.component.scss';
 function Footer() {
   return (
     <div>
-      <p>
-        Footer works!
-      </p>
+      <p>Footer works!</p>
     </div>
   );
 }

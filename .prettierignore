@@ -1,0 +1,17 @@
+# Ignore artifacts:
+dist
+build
+coverage
+node_modules
+
+# Ignore all HTML files:
+**/*.html
+**/*.js
+**/*.md
+**/*.json
+**/*.txt
+
+.npmrc
+.gitignore
+.prettierrc
+.prettierignore
