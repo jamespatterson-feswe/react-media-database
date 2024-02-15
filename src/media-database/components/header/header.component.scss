@@ -1,0 +1,51 @@
+@import '../../../mixins.scss';
+
+.header-container {
+    display: flex;
+    align-items: center;
+
+    background-color: var(--blue);
+    color: var(--white);
+
+    height: var(--bar-height);
+    width: var(--width);
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 28px;
+
+        @include tablet {
+            font-size: 24px;
+        }
+
+        @include mobile {
+            font-size: 20px;
+        }
+
+        padding: 0 var(--desktop-padding);
+        width: var(--width);
+
+        .header {
+            cursor: pointer;
+            text-shadow: .5px .5px var(--blk);
+
+            @include mobile {
+                text-shadow: .25px .25px var(--blk);
+            }
+        }
+
+        .search-icon {
+            cursor: pointer;
+
+            height: 28px;
+
+            @include mobile {
+                height: 24px;
+            }
+        }
+    }
+}

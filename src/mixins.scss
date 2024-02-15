@@ -1,0 +1,25 @@
+@mixin mobile() {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+// landscape: rules apply when the browser window width is greater than height
+@mixin landscape() {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+// portrait: rules apply when browser window height is greater than width
+@mixin portrait() {
+    @media (orientation: portrait) {
+        @content;
+    }
+}

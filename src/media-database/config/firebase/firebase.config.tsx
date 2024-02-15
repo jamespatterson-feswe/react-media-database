@@ -1,10 +1,10 @@
-import { FirebaseApp, FirebaseOptions, initializeApp } from 'firebase/app';
-import { Firestore, getFirestore } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
 /** @todo ADD A .env FILE TO REMOVE THE CONFIG OUT OF THIS FILE */
 
 // Firebase configuration from setup of firestore
-const firebaseConfig: FirebaseOptions = {
+const firebaseConfig: any = {
   apiKey: 'AIzaSyDz35_dmbfuQry4s3tN45fjAWKVxgUwQ2I',
   authDomain: 'react-movie-database-a1844.firebaseapp.com',
   projectId: 'react-movie-database-a1844',
@@ -14,7 +14,7 @@ const firebaseConfig: FirebaseOptions = {
 };
 
 // Initialize Firebase app with config from firebase
-const app: FirebaseApp = initializeApp(firebaseConfig);
+const app: any = initializeApp(firebaseConfig);
 
 // Export the firestore
-export const firestore: Firestore = getFirestore(app);
+export const firestore: any = getFirestore(app);
