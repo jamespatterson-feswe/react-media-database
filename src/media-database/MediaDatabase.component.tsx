@@ -9,18 +9,17 @@ function MediaDatabase() {
   return (
     <div>
       <Header />
-      {
-        media?.movies?.map((movie, index) => {
-          return (
-            <div key={index}>
-              <p>{ movie.title }</p>
-              <p>{ movie.description }</p>
-              <p>{ movie.year }</p>
-              <p>{ movie.genre }</p>
-            </div>
-          );
-        })
-      } 
+      {media?.movies?.map((movie, index) => {
+        return (
+          <div key={index}>
+            <p>{movie.title}</p>
+            <p>{movie.description}</p>
+            <p>{movie.year}</p>
+            <p>{movie.genre}</p>
+            <br />
+          </div>
+        );
+      })}
       <br />
       <Footer />
     </div>

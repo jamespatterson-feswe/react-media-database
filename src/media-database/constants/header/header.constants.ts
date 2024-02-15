@@ -1,3 +1,3 @@
 export const CONSTANTS = {
-    heading: 'Local Media Database'
+  heading: 'Media Database'
 };
