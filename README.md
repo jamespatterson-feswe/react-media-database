@@ -24,3 +24,12 @@ A `react` single page application designed to perform simple `CRUD` processes ag
 ## Node
 - Version `^18 | ^20`
 
+## PR Guide
+- Always run prettier before committing code
+- Always fix lint issues
+- Always write test code
+- use the format git commit -m "<task>: commit msg less than 100 chars in length"
+- The `task` could be, chore, build, add, remove, fix, update, etc
+    - The following is clean, simple, and easy to read
+    - `git commit -m "build: Footer component, standalone, stateless"`
+
