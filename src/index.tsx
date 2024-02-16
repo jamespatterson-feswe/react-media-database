@@ -2,9 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 // import reportWebVitals from './reportWebVitals';
 
+import { UtilityService as utilityService } from './media-database/services';
 import { MediaDatabase } from './media-database/index';
 
 import './index.scss';
+
+window.onresize = () => {
+  utilityService.setScreenWidth(window.innerWidth);
+};
 
 const root = document?.getElementById('root');
 if (root)

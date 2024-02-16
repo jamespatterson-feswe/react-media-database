@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './movies.component.scss';
-import { IMovies } from '../../interfaces'
-import { Movie } from '../index';
+import { IMovies } from '../../interfaces';
+import { Movie } from '../movie/movie.component';
 
 function Movies(props: IMovies) {
   return (
