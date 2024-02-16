@@ -4,9 +4,9 @@ import './footer.component.scss';
 
 function Footer() {
   return (
-    <div>
-      <p>Footer works!</p>
-    </div>
+    <footer className="footer-container flexd">
+      <section className="container flexd">&#169; Media Database</section>
+    </footer>
   );
 }
 
