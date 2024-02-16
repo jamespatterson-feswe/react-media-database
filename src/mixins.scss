@@ -10,6 +10,12 @@
   }
 }
 
+@mixin desktop() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
 // landscape: rules apply when the browser window width is greater than height
 @mixin landscape() {
   @media (orientation: landscape) {

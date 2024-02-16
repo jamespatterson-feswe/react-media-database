@@ -1,20 +1,14 @@
 import React from 'react';
+
 import './movie.component.scss';
+import { IMovie } from '../../interfaces'
+import { Card } from '..';
 
-interface Movie {
-  movie: any;
-}
-
-function Movie(props: Movie) {
+function Movie(props: IMovie) {
   return (
     <section className="movie-container">
       <div className="movie">
-        <div className="movie-card">
-          <p>
-            {props.movie.title} ({props.movie.year})
-          </p>
-          <br />
-        </div>
+        <Card movie={props.movie} />
       </div>
     </section>
   );

@@ -3,5 +3,10 @@ import { Movie } from '../index';
 import React from 'react';
 
 test('renders learn react link', () => {
-  render(<Movie movie={{}} />);
+  render(<Movie movie={{
+    description: '',
+    genre: '',
+    title: '',
+    year: ''
+  }} />);
 });

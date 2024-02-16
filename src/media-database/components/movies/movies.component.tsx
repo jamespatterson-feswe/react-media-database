@@ -1,13 +1,10 @@
 import React from 'react';
-import { Movie } from '../index';
+
 import './movies.component.scss';
+import { IMovies } from '../../interfaces'
+import { Movie } from '../index';
 
-interface Movies {
-  movies: any[];
-}
-
-function Movies(props: Movies) {
-  console.log(props.movies);
+function Movies(props: IMovies) {
   return (
     <section className="movies-container">
       <div className="movies">
