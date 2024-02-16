@@ -1,0 +1,13 @@
+.main-container-flexd {
+  display: flex;
+  flex-direction: column;
+
+  height: 85vh;
+  width: 100%;
+
+  overflow: auto;
+
+  .container {
+    padding: var(--desktop-padding);
+  }
+}

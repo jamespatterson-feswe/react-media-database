@@ -1,28 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './mediaDatabase.component.scss';
-import { Header, Footer } from './components/index';
-import { default as mock } from './mock/media.json';
+import { Header, Footer, Main } from './components/index';
 
 function MediaDatabase() {
-  const [media] = useState(mock);
-
   return (
-    <div>
+    <main className="media-database-container">
       <Header />
-      {media?.movies?.map((movie, index) => {
-        return (
-          <div key={index}>
-            <p>{movie.title}</p>
-            <p>{movie.description}</p>
-            <p>{movie.year}</p>
-            <p>{movie.genre}</p>
-            <br />
-          </div>
-        );
-      })}
-      <br />
+      <Main />
       <Footer />
-    </div>
+    </main>
   );
 }
 
