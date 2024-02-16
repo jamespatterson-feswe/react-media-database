@@ -10,6 +10,10 @@
   height: var(--bar-height);
   width: var(--width);
 
+  border-bottom-width: 0.25px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--blk);
+
   .container {
     display: flex;
     flex-direction: row;

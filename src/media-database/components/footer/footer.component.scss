@@ -7,6 +7,11 @@
 .footer-container {
   background-color: var(--blue);
   color: var(--white);
-  height: 5vh;
+
+  height: calc(5vh - 1.25px);
   width: 100%;
+
+  border-top-width: 0.25px;
+  border-top-style: solid;
+  border-top-color: var(--blk);
 }

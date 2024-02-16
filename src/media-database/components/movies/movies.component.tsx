@@ -12,7 +12,7 @@ function Movies(props: Movies) {
     <section className="movies-container">
       <div className="movies">
         {props.movies?.map((movie: any, index: number) => {
-          return <Movie movie={movie} index={index} />;
+          return <Movie movie={movie} key={index} />;
         })}
       </div>
     </section>
