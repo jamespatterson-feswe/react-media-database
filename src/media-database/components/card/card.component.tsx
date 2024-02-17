@@ -6,13 +6,22 @@ import './card.component.scss';
 function Card(props: ICard) {
   return (
     <div className="movie-card">
-      <p>
-        {props.movie.title} ({props.movie.year})
-      </p>
-      <img
-        src="https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?w=845&ssl=1"
+      <div className='card-header'>
+        {props.movie.title}
+      </div>
+      <hr />
+      <div>
+        {props.movie.year} - {props.movie.genre}
+      </div>
+      <hr />
+      <div>
+        {props.movie.description}
+      </div>
+      <hr />
+      {/* <img
+        src={require('../../../assets/not-found.png')}
         alt="Image that says not found"
-      />
+      /> */}
       <br />
     </div>
   );

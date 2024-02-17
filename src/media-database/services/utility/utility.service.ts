@@ -1,4 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 /** add new variable to the state type */
 type UtilityState = {
@@ -14,9 +14,10 @@ let initialState = {
 const state: BehaviorSubject<UtilityState> = new BehaviorSubject<UtilityState>(initialState);
 
 /** screen width logic */
-const getScreenWidth = (): number =>
+const getScreenWidth = (): Observable<number> => {
   /** get width */
-  state.getValue().width ?? 0;
+  return of(state.getValue().width ?? 0);
+}
 
 const setScreenWidth = (width: number): void =>
   /** set width */

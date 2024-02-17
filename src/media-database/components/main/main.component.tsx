@@ -10,9 +10,14 @@ function Main() {
   const [media] = useState(mock);
 
   return (
-    <section className="main-container-flexd">
+    <section className="main-container">
       <div className="container">
-        <Movies movies={media.movies} />
+        <div className='movies-section'>
+          <Movies movies={media.movies} />
+        </div>
+        <div className='filter-section'>
+          this is the filter section
+        </div>
       </div>
     </section>
   );

@@ -5,13 +5,7 @@ import { IMovie } from '../../interfaces';
 import { Card } from '..';
 
 function Movie(props: IMovie) {
-  return (
-    <section className="movie-container">
-      <div className="movie">
-        <Card movie={props.movie} />
-      </div>
-    </section>
-  );
+  return <Card movie={props.movie} />;
 }
 
 export { Movie };

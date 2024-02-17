@@ -8,6 +8,9 @@
   background-color: var(--blue);
   color: var(--white);
 
+  z-index: 5;
+  position: fixed;
+
   height: calc(5vh - 1.25px);
   width: 100%;
 
