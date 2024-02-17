@@ -17,7 +17,7 @@ const state: BehaviorSubject<UtilityState> = new BehaviorSubject<UtilityState>(i
 const getScreenWidth = (): Observable<number> => {
   /** get width */
   return of(state.getValue().width ?? 0);
-}
+};
 
 const setScreenWidth = (width: number): void =>
   /** set width */

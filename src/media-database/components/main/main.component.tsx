@@ -12,12 +12,10 @@ function Main() {
   return (
     <section className="main-container">
       <div className="container">
-        <div className='filter-section'>
-          <div className='filter'>
-            this is the filter section
-          </div>
+        <div className="filter-section">
+          <div className="filter">this is the filter section</div>
         </div>
-        <div className='movies-section'>
+        <div className="movies-section">
           <Movies movies={media.movies} />
         </div>
       </div>

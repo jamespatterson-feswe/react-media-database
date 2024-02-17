@@ -10,7 +10,7 @@
 
     .movies-section {
       padding-left: calc(100vw / 5);
-      width: calc(4*(100vw / 5));
+      width: calc(4 * (100vw / 5));
     }
 
     .filter-section {
@@ -23,7 +23,6 @@
       width: calc(100vw / 5);
 
       .filter {
-        
       }
     }
   }
