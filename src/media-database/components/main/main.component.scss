@@ -9,18 +9,22 @@
     flex-direction: row;
 
     .movies-section {
+      padding-left: calc(100vw / 5);
       width: calc(4*(100vw / 5));
     }
 
     .filter-section {
       position: absolute;
-      right: 0;
 
       background-color: var(--white);
       color: black;
 
       height: 85vh;
       width: calc(100vw / 5);
+
+      .filter {
+        
+      }
     }
   }
 }
