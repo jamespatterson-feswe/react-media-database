@@ -2,6 +2,8 @@ import React from 'react';
 import './filter.component.scss';
 
 interface IFilter {
+  filtered: string;
+  setFiltered: Function;
   selections: string[];
   selected: string;
   setSelected: Function;
@@ -30,7 +32,17 @@ function Filter(props: IFilter) {
       })}
       <hr />
       <label>Filter {props.selected}</label>
-      <input type="text" id="fname" name="firstname" placeholder={'search by title, year, etc'} />
+      <div className="input-container">
+        <input
+          onChange={(event) => {
+            props.setFiltered(event.target.value);
+          }}
+          type="search"
+          id="filtered"
+          name="filtered"
+          placeholder={'by title, show, year...'}
+        />
+      </div>
     </div>
   );
 }
