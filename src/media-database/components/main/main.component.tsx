@@ -52,7 +52,7 @@ function Main(props: IMain) {
             setSelected={props.setSelected}
           />
         </div>
-        <div className="movies-section">
+        <div className="media-section">
           {props.selected === 'Movies' ? <Movies movies={movies} /> : undefined}
         </div>
       </div>
