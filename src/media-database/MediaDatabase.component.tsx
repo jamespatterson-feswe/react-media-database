@@ -1,6 +1,7 @@
 import React from 'react';
-import './mediaDatabase.component.scss';
+
 import { Header, Footer, Main } from './components/index';
+import './mediaDatabase.component.scss';
 
 function MediaDatabase() {
   return (

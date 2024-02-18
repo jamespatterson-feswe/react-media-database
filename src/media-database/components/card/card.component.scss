@@ -15,24 +15,24 @@
     .title-year-genre {
       width: calc((100% / 5) * 4);
 
-      .title {
-        background-color: var(--white);
-        color: var(--blue);
-        text-shadow: 0.5px 0.5px var(--grey);
-
-        border-left-width: 2px;
-        border-left-style: solid;
-        border-left-color: var(--grey);
-      }
-
       .title,
       .year,
       .genre {
-        height: calc(100% / 3);
+        height: calc((100% / 3) - 1px);
         display: flex;
         align-items: center;
         text-align-last: center;
         justify-content: center;
+
+        background-color: var(--light-grey);
+        color: var(--blue);
+        text-shadow: 0.5px 0.5px var(--grey);
+      }
+
+      .title {
+        background-color: var(--blue);
+        color: var(--white);
+        text-shadow: 0.5px 0.5px var(--red);
       }
     }
   }

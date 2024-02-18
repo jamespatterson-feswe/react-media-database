@@ -18,13 +18,21 @@ function Header() {
     console.log('user wants to search');
   };
 
+  const changeMediaSelection = () => {
+    console.log('change the media selection');
+  };
+
   return (
     <section className="header-container">
       <div className="container">
         <div className="header">
           {title.map((word: string, index: number) => {
             return (
-              <span className={index < 1 ? 'first-word' : ''} key={index}>
+              <span
+                onClick={index < 1 ? () => changeMediaSelection() : () => {}}
+                className={index < 1 ? 'first-word' : ''}
+                key={index}
+              >
                 {word}
               </span>
             );
