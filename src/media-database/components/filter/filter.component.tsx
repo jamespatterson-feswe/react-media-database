@@ -1,21 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './filter.component.scss';
 
-function Filter() {
-  const [selections] = useState(['Movie', 'Music', 'Television', 'Video Game']);
-  const [selected] = useState(selections[0]);
+interface IFilter {
+  selections: string[];
+  selected: string;
+  setSelected: Function;
+}
 
+function Filter(props: IFilter) {
   return (
     <div className="filter">
       <img
         src={require('../../../assets/media.png')}
         alt="Image to represent the many different media types available."
       />
-      {selections.map((selection: string, index: number) => {
+      {props.selections.map((selection: string, index: number) => {
         return (
-          <header className={selection === selected ? 'selected' : ''} key={index}>
-            {selection} Database
-          </header>
+          <span
+            key={index}
+            className={selection === props.selected ? 'selections selected' : 'selections'}
+            onClick={() => {
+              props.setSelected(props.selections[index]);
+            }}
+          >
+            {selection}
+          </span>
         );
       })}
     </div>

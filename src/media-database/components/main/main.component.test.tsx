@@ -3,5 +3,5 @@ import { Main } from '../index';
 import React from 'react';
 
 test('renders learn react link', () => {
-  render(<Main />);
+  render(<Main selections={[]} selected={''} setSelected={() => {}} />);
 });

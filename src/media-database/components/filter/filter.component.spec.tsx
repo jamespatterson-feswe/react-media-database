@@ -3,5 +3,5 @@ import { Filter } from '../index';
 import React from 'react';
 
 test('renders learn react link', () => {
-  render(<Filter />);
+  render(<Filter selections={[]} selected={''} setSelected={() => {}} />);
 });

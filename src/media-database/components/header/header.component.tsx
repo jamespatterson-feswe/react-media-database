@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { CONSTANTS as constants } from '../../constants/index';
 import './header.component.scss';
 
-const splitTitle = (value: string): string[] => {
-  const words = value.split(' ').reverse();
-  const firstWord = `${words.pop()} `;
-
-  return [firstWord, words.reverse().join(' ')];
-};
-
-function Header() {
-  /** hooks */
-  const [title] = useState(splitTitle(constants.heading));
+function Header(props: { selected: string; setSelected: Function }) {
+  props.setSelected(props.selected);
 
   const initiateSearch = () => {
     console.log('user wants to search');
@@ -26,7 +17,7 @@ function Header() {
     <section className="header-container">
       <div className="container">
         <div className="header">
-          {title.map((word: string, index: number) => {
+          {[props.selected, ' Database'].map((word: string, index: number) => {
             return (
               <span
                 onClick={index < 1 ? () => changeMediaSelection() : () => {}}
