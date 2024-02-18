@@ -14,6 +14,7 @@ function Filter(props: IFilter) {
         src={require('../../../assets/media.png')}
         alt="Image to represent the many different media types available."
       />
+      <hr />
       {props.selections.map((selection: string, index: number) => {
         return (
           <span
@@ -27,6 +28,9 @@ function Filter(props: IFilter) {
           </span>
         );
       })}
+      <hr />
+      <label>Filter below</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name.." />
     </div>
   );
 }

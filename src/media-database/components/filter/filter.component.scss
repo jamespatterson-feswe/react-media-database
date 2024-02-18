@@ -14,11 +14,23 @@
     filter: brightness(0) invert(1);
   }
 
+  hr {
+    padding: 0;
+    width: 100%;
+  }
+
   .selections {
     cursor: pointer;
 
     &.selected {
       color: var(--red);
     }
+  }
+
+  input[type='text'] {
+    height: 3.5vh;
+    background-color: var(--light-grey);
+    color: var(--blue);
+    text-shadow: 0.5px 0.5px var(--grey);
   }
 }
