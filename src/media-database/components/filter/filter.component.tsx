@@ -29,8 +29,8 @@ function Filter(props: IFilter) {
         );
       })}
       <hr />
-      <label>Filter below</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name.." />
+      <label>Filter {props.selected}</label>
+      <input type="text" id="fname" name="firstname" placeholder={'search by title, year, etc'} />
     </div>
   );
 }
