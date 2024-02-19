@@ -73,7 +73,7 @@
           display: flex;
           flex-direction: row;
           flex-wrap: wrap;
-          justify-content: center;
+          justify-content: space-evenly;
           gap: 0 var(--desktop-padding);
 
           .episode {
@@ -85,6 +85,7 @@
             img {
               max-height: 50px;
               width: auto;
+              filter: brightness(0) invert(1);
             }
           }
         }

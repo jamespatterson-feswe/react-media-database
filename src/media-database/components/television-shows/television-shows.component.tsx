@@ -6,10 +6,20 @@ import { createRoot } from 'react-dom/client';
 
 function Television(props: any) {
   const injectTvShowSeason = (_index: number, _show: string, _season: any) => {
+    let tempSeason = JSON.parse(JSON.stringify(_season));
+    if (!Array.isArray(_season)) {
+      const seasons: any[] = [];
+      for (const key in _season) {
+        if (Object.prototype.hasOwnProperty.call(_season, key)) {
+          seasons.push(_season[key]);
+        }
+      }
+      tempSeason = seasons.flat();
+    }
     const showEpisodesElement = document.getElementsByClassName(`${_show}-episodes`)?.[0];
-    showEpisodesElement.children[0].remove();
+    showEpisodesElement?.children?.[0]?.remove();
     const seasonEpisodes = createRoot(showEpisodesElement);
-    seasonEpisodes.render(<TelevisionShowSeason season={_season} />);
+    seasonEpisodes.render(<TelevisionShowSeason season={tempSeason} />);
   };
 
   return (
