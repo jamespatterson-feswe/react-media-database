@@ -5,7 +5,7 @@ import { TelevisionShowSeason } from '../television-show-season/tv-show-season.c
 import { createRoot } from 'react-dom/client';
 
 function Television(props: any) {
-  const setTheSeasonSelected = (_index: number, _show: string, _season: any) => {
+  const injectTvShowSeason = (_index: number, _show: string, _season: any) => {
     const showEpisodesElement = document.getElementsByClassName(`${_show}-episodes`)?.[0];
     showEpisodesElement.children[0].remove();
     const seasonEpisodes = createRoot(showEpisodesElement);
@@ -34,7 +34,7 @@ function Television(props: any) {
                         <button
                           key={ind}
                           onClick={() => {
-                            setTheSeasonSelected(
+                            injectTvShowSeason(
                               ind,
                               Object.keys(show)[0],
                               props.shows[index][Object.keys(show)[0]][season]

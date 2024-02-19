@@ -55,6 +55,7 @@
             overflow: hidden;
 
             .season-btn {
+              cursor: pointer;
               background-color: var(--grey);
               color: var(--white);
               text-shadow: 0.5px 0.5px black;
@@ -66,10 +67,23 @@
 
       #episodes {
         min-height: var(--desktop-padding);
+        cursor: pointer;
+
         .season-episodes {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 0 var(--desktop-padding);
+
           .episode {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: var(--desktop-padding) 0;
+
             img {
-              max-height: 20px;
+              max-height: 50px;
               width: auto;
             }
           }
