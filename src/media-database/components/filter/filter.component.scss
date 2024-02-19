@@ -1,11 +1,43 @@
-.filter {
+@import '../../../mixins.scss';
+
+.filter-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   gap: var(--desktop-padding) 0;
 
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--desktop-padding) 0;
+
+    @include mobile {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 10px 0;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+      }
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+
+    hr {
+      display: none;
+    }
+  }
+
   padding: var(--desktop-padding);
+
   hr {
     padding: 0;
     width: 100%;
@@ -16,6 +48,12 @@
     width: 10vw;
 
     filter: brightness(0) invert(1);
+  }
+
+  @include mobile {
+    img {
+      display: none;
+    }
   }
 
   .selections {

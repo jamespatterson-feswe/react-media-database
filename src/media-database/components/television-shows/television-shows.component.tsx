@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './television-shows.component.scss';
 import { TelevisionShowSeason } from '../television-show-season/tv-show-season.component';
 import { createRoot } from 'react-dom/client';
 
 function Television(props: any) {
+  const [injected, setInjected] = useState([] as string[]);
   const injectTvShowSeason = (_index: number, _show: string, _season: any) => {
     let tempSeason = JSON.parse(JSON.stringify(_season));
     if (!Array.isArray(_season)) {
@@ -18,8 +19,15 @@ function Television(props: any) {
     }
     const showEpisodesElement = document.getElementsByClassName(`${_show}-episodes`)?.[0];
     showEpisodesElement?.children?.[0]?.remove();
-    const seasonEpisodes = createRoot(showEpisodesElement);
-    seasonEpisodes.render(<TelevisionShowSeason season={tempSeason} />);
+    const found = injected.findIndex((s) => s === _show);
+    if (found < 0) {
+      setInjected(injected.concat([_show]));
+      const seasonEpisodes = createRoot(showEpisodesElement);
+      seasonEpisodes.render(<TelevisionShowSeason season={tempSeason} />);
+    } else {
+      injected.splice(found, 1);
+      setInjected(injected);
+    }
   };
 
   return (

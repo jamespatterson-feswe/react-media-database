@@ -60,8 +60,8 @@ function Main(props: IMain) {
   }, [filtered]);
 
   return (
-    <section className="main-container">
-      <div className="container">
+    <section className="main-container-section">
+      <div className="main-container">
         <div className="filter-section">
           <Filter
             filtered={filtered}

@@ -11,28 +11,30 @@ interface IFilter {
 
 function Filter(props: IFilter) {
   return (
-    <div className="filter">
-      <img
-        src={require('../../../assets/media.png')}
-        alt="Image to represent the many different media types available."
-      />
-      <hr />
-      {props.selections.map((selection: string, index: number) => {
-        return (
-          <span
-            key={index}
-            className={selection === props.selected ? 'selections selected' : 'selections'}
-            onClick={() => {
-              if (props.selections[index] !== props.selected) {
-                props.setSelected(props.selections[index]);
-                props.setFiltered('');
-              }
-            }}
-          >
-            {selection}
-          </span>
-        );
-      })}
+    <div className="filter-container">
+      <div className="filter">
+        <img
+          src={require('../../../assets/media.png')}
+          alt="Image to represent the many different media types available."
+        />
+        <hr />
+        {props.selections.map((selection: string, index: number) => {
+          return (
+            <span
+              key={index}
+              className={selection === props.selected ? 'selections selected' : 'selections'}
+              onClick={() => {
+                if (props.selections[index] !== props.selected) {
+                  props.setSelected(props.selections[index]);
+                  props.setFiltered('');
+                }
+              }}
+            >
+              {selection}
+            </span>
+          );
+        })}
+      </div>
       <hr />
       <div className="input-container">
         <input

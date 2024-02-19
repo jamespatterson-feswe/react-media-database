@@ -1,3 +1,5 @@
+@import '../../../mixins.scss';
+
 .television-shows-container {
   padding: var(--desktop-padding);
 
@@ -18,12 +20,22 @@
         display: flex;
         flex-direction: row;
 
+        @include mobile {
+          img {
+            display: none;
+          }
+        }
+
         img {
           width: calc(100% / 5);
         }
 
         .title-genre-seasons {
           width: calc((100% / 5) * 4);
+
+          @include mobile {
+            width: 100%;
+          }
 
           .title,
           .seasons,
