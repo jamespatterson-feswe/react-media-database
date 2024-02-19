@@ -33,10 +33,6 @@
     flex-direction: row;
     gap: 10px;
 
-    input[type='search']::placeholder {
-      color: var(--white);
-      text-align: center;
-    }
     input[type='search'] {
       height: 4vh;
       width: 100%;

@@ -23,7 +23,10 @@ function Filter(props: IFilter) {
             key={index}
             className={selection === props.selected ? 'selections selected' : 'selections'}
             onClick={() => {
-              props.setSelected(props.selections[index]);
+              if (props.selections[index] !== props.selected) {
+                props.setSelected(props.selections[index]);
+                props.setFiltered('');
+              }
             }}
           >
             {selection}
@@ -31,7 +34,6 @@ function Filter(props: IFilter) {
         );
       })}
       <hr />
-      <label>Filter {props.selected}</label>
       <div className="input-container">
         <input
           onChange={(event) => {
@@ -40,7 +42,7 @@ function Filter(props: IFilter) {
           type="search"
           id="filtered"
           name="filtered"
-          placeholder={'by title, show, year...'}
+          placeholder={'Filter ' + props.selected}
         />
       </div>
     </div>

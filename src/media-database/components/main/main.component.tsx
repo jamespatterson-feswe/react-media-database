@@ -16,10 +16,9 @@ function Main(props: IMain) {
   const availableMedia: BehaviorSubject<any> = new BehaviorSubject<any>(mock);
   const [filtered, setFiltered] = useState('');
   const [movies, setMovies] = useState(availableMedia.getValue().movies);
-  const [shows] = useState(availableMedia.getValue().televisionShows);
+  const [shows, setShows] = useState(availableMedia.getValue().televisionShows);
 
-  // movies, music, televisionShows, games
-  // (['Movies', 'Music', 'Television Shows', 'Video Games']);
+  // movies, music, televisionShows, games - (['Movies', 'Music', 'Television Shows', 'Video Games']);
   useEffect(() => {
     if (filtered.length) {
       availableMedia
@@ -32,21 +31,31 @@ function Main(props: IMain) {
                 ? 'televisionShows'
                 : ''
           ),
-          map((movies) =>
-            movies.filter(
-              (movie: any) =>
-                movie?.title?.toLowerCase().includes(filtered.toLowerCase()) ||
-                movie?.year?.toLowerCase().includes(filtered.toLowerCase())
-            )
+          map((media) =>
+            media.filter((type: any) => {
+              if (Object.keys(type).length === 1) {
+                for (const key in type) {
+                  if (Object.prototype.hasOwnProperty.call(type, key)) {
+                    return key.toLowerCase().includes(filtered.toLowerCase());
+                  }
+                }
+              }
+              return (
+                type?.title?.toLowerCase().includes(filtered.toLowerCase()) ||
+                type?.year?.toLowerCase().includes(filtered.toLowerCase())
+              );
+            })
           )
         )
         .subscribe({
-          next: (movies) => {
-            setMovies(movies);
+          next: (filteredMedia) => {
+            if (props.selected === 'Movies') setMovies(filteredMedia);
+            if (props.selected === 'Television Shows') setShows(filteredMedia);
           }
         });
     } else {
       setMovies(mock.movies);
+      setShows(mock.televisionShows);
     }
   }, [filtered]);
 
