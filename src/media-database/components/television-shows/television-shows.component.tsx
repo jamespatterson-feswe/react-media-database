@@ -6,7 +6,12 @@ import { createRoot } from 'react-dom/client';
 
 function Television(props: any) {
   const [injected, setInjected] = useState([] as string[]);
-  const injectTvShowSeason = (_index: number, _show: string, _season: any) => {
+  const injectTvShowSeason = (
+    _index: number,
+    _show: string,
+    _season: any,
+    _seasonString: string
+  ) => {
     let tempSeason = JSON.parse(JSON.stringify(_season));
     if (!Array.isArray(_season)) {
       const seasons: any[] = [];
@@ -19,14 +24,13 @@ function Television(props: any) {
     }
     const showEpisodesElement = document.getElementsByClassName(`${_show}-episodes`)?.[0];
     showEpisodesElement?.children?.[0]?.remove();
-    const found = injected.findIndex((s) => s === _show);
-    if (found < 0) {
-      setInjected(injected.concat([_show]));
+    const found = injected.filter((s) => s === _show || s === _seasonString);
+    if (found.length !== 2) {
+      setInjected([_show, _seasonString]);
       const seasonEpisodes = createRoot(showEpisodesElement);
       seasonEpisodes.render(<TelevisionShowSeason season={tempSeason} />);
     } else {
-      injected.splice(found, 1);
-      setInjected(injected);
+      setInjected([]);
     }
   };
 
@@ -55,7 +59,8 @@ function Television(props: any) {
                             injectTvShowSeason(
                               ind,
                               Object.keys(show)[0],
-                              props.shows[index][Object.keys(show)[0]][season]
+                              props.shows[index][Object.keys(show)[0]][season],
+                              season
                             );
                           }}
                           className="season-btn"
