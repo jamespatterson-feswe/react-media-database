@@ -1,0 +1,82 @@
+.television-shows-container {
+  padding: var(--desktop-padding);
+
+  .television-shows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .television-show-card {
+      width: 100%;
+      border: 1px solid #ccc;
+
+      margin-bottom: var(--desktop-padding);
+
+      .img-container {
+        display: flex;
+        flex-direction: row;
+
+        img {
+          width: calc(100% / 5);
+        }
+
+        .title-genre-seasons {
+          width: calc((100% / 5) * 4);
+
+          .title,
+          .seasons,
+          .genre {
+            height: calc((100% / 3) - 1px);
+            display: flex;
+            align-items: center;
+            text-align-last: center;
+            justify-content: center;
+
+            background-color: var(--light-grey);
+            color: var(--blue);
+            text-shadow: 0.5px 0.5px var(--grey);
+          }
+
+          .title {
+            background-color: var(--blue);
+            color: var(--white);
+            text-shadow: 0.5px 0.5px var(--red);
+          }
+          .seasons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 10px;
+
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            .season-btn {
+              background-color: var(--grey);
+              color: var(--white);
+              text-shadow: 0.5px 0.5px black;
+              padding: 0 10px;
+            }
+          }
+        }
+      }
+
+      #episodes {
+        min-height: var(--desktop-padding);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .television-show-card img {
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  }
+}

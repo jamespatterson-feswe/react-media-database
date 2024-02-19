@@ -4,6 +4,7 @@ import { default as mock } from '../../mock/media.json';
 import { Movies, Filter } from '../index';
 import './main.component.scss';
 import { BehaviorSubject, debounceTime, map, pluck } from 'rxjs';
+import { Television } from '../television-shows/television-shows.component';
 
 interface IMain {
   selections: string[];
@@ -15,13 +16,22 @@ function Main(props: IMain) {
   const availableMedia: BehaviorSubject<any> = new BehaviorSubject<any>(mock);
   const [filtered, setFiltered] = useState('');
   const [movies, setMovies] = useState(availableMedia.getValue().movies);
+  const [shows] = useState(availableMedia.getValue().televisionShows);
 
+  // movies, music, televisionShows, games
+  // (['Movies', 'Music', 'Television Shows', 'Video Games']);
   useEffect(() => {
     if (filtered.length) {
       availableMedia
         .pipe(
           debounceTime(500),
-          pluck('movies'),
+          pluck(
+            props.selected === 'Movies'
+              ? 'movies'
+              : props.selected === 'Television Shows'
+                ? 'televisionShows'
+                : ''
+          ),
           map((movies) =>
             movies.filter(
               (movie: any) =>
@@ -53,7 +63,11 @@ function Main(props: IMain) {
           />
         </div>
         <div className="media-section">
-          {props.selected === 'Movies' ? <Movies movies={movies} /> : undefined}
+          {props.selected === 'Movies' ? (
+            <Movies movies={movies} />
+          ) : props.selected === 'Television Shows' ? (
+            <Television shows={shows} />
+          ) : undefined}
         </div>
       </div>
     </section>

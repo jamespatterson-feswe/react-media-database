@@ -3,8 +3,6 @@ import React from 'react';
 import './header.component.scss';
 
 function Header(props: { selected: string; setSelected: Function }) {
-  props.setSelected(props.selected);
-
   const initiateSearch = () => {
     console.log('user wants to search');
   };
