@@ -66,6 +66,14 @@
 
       #episodes {
         min-height: var(--desktop-padding);
+        .season-episodes {
+          .episode {
+            img {
+              max-height: 20px;
+              width: auto;
+            }
+          }
+        }
       }
 
       &:last-child {

@@ -1,25 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './television-shows.component.scss';
+import { TelevisionShowSeason } from '../television-show-season/tv-show-season.component';
+import { createRoot } from 'react-dom/client';
 
 function Television(props: any) {
-  const [season, setSeason] = useState([] as any[]);
-
-  const setTheSeasonSelected = (_show: string, _season: any) => {
-    setSeason(_season);
+  const setTheSeasonSelected = (_index: number, _show: string, _season: any) => {
     const showEpisodesElement = document.getElementsByClassName(`${_show}-episodes`)?.[0];
     showEpisodesElement.children[0].remove();
-    const section = document.createElement('section');
-    section.className = 'season-content';
-    section.innerText = `${_season}`;
-    showEpisodesElement.appendChild(section);
-    console.log(_show, showEpisodesElement, season);
+    const seasonEpisodes = createRoot(showEpisodesElement);
+    seasonEpisodes.render(<TelevisionShowSeason season={_season} />);
   };
-
-  let shows: string[] = [];
-  for (let index = 0, leng = props.shows.length; index < leng; index++) {
-    shows = shows.concat(Object.keys(props.shows[index]));
-  }
 
   return (
     <section className="television-shows-container">
@@ -44,6 +35,7 @@ function Television(props: any) {
                           key={ind}
                           onClick={() => {
                             setTheSeasonSelected(
+                              ind,
                               Object.keys(show)[0],
                               props.shows[index][Object.keys(show)[0]][season]
                             );
