@@ -3,5 +3,7 @@ import { Header } from '../index';
 import React from 'react';
 
 test('renders learn react link', () => {
-  render(<Header selected={''} setSelected={() => {}} />);
+  render(
+    <Header isModalOpen={false} setIsModalOpen={() => {}} selected={''} setSelected={() => {}} />
+  );
 });
