@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { Header, Footer, Main, Modal } from './components/index';
 import './mediaDatabase.component.scss';
+import { createPortal } from 'react-dom';
 
 function MediaDatabase() {
   const [selections] = useState(['Movies', 'Music', 'Television Shows', 'Video Games']);
@@ -10,7 +11,8 @@ function MediaDatabase() {
 
   return (
     <main className="media-database-container">
-      {isModalOpen ? <Modal close={setIsModalOpen} /> : undefined}
+      {isModalOpen &&
+        createPortal(<Modal close={setIsModalOpen} selected={selected} />, document.body)}
       <Header
         selected={selected}
         setSelected={setSelected}

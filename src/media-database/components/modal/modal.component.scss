@@ -1,0 +1,19 @@
+.modal-container {
+  position: absolute;
+  top: 10vh;
+  left: 10%;
+
+  padding: var(--desktop-padding);
+
+  height: 80vh;
+  width: 80%;
+
+  border-radius: 25px;
+  border: 2px solid var(--grey);
+  background: var(--light-grey);
+
+  .modal-container-header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
