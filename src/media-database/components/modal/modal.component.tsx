@@ -11,8 +11,8 @@ const mapping: Record<string, string> = {
 };
 
 function Modal(props: { close: Function; selected: string }) {
-  const renderSelected = (selected: string): any => {
-    switch (selected) {
+  const renderSelected = (): React.JSX.Element => {
+    switch (props.selected) {
       case 'Movies':
         return <MovieForm />;
       case 'Music':
@@ -22,7 +22,7 @@ function Modal(props: { close: Function; selected: string }) {
       case 'Video Games':
         return <VideoGameForm />;
       default:
-        return undefined;
+        return <></>;
     }
   };
 
@@ -32,7 +32,7 @@ function Modal(props: { close: Function; selected: string }) {
         <div className="modal-header">Request {mapping[props.selected]}</div>
         <button onClick={() => props.close(false)}> Close </button>
       </div>
-      <div className="modal-container-content">{renderSelected(props.selected)}</div>
+      <div className="modal-container-content">{renderSelected()}</div>
     </section>
   );
 }
