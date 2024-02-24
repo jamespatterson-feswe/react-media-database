@@ -1,6 +1,14 @@
 import React from 'react';
 
 import './modal.component.scss';
+import { MovieForm, MusicForm, TelevisionShowsForm, VideoGameForm } from './components';
+
+const mapping: Record<string, string> = {
+  Movies: 'a movie or movies',
+  Music: 'an album',
+  'Television Shows': 'a series, season, or episode',
+  'Video Games': 'a video game or series of games'
+};
 
 function Modal(props: { close: Function; selected: string }) {
   const renderSelected = (selected: string): any => {
@@ -21,7 +29,7 @@ function Modal(props: { close: Function; selected: string }) {
   return (
     <section className="modal-container">
       <div className="modal-container-header">
-        <div className="modal-header">Request {props.selected}</div>
+        <div className="modal-header">Request {mapping[props.selected]}</div>
         <button onClick={() => props.close(false)}> Close </button>
       </div>
       <div className="modal-container-content">{renderSelected(props.selected)}</div>
@@ -30,39 +38,3 @@ function Modal(props: { close: Function; selected: string }) {
 }
 
 export { Modal };
-
-function MovieForm() {
-  return (
-    <div>
-      <div>Movie Form Header</div>
-      <div>Movie Form Form</div>
-    </div>
-  );
-}
-
-function MusicForm() {
-  return (
-    <div>
-      <div>Music Form Header</div>
-      <div>Music Form</div>
-    </div>
-  );
-}
-
-function TelevisionShowsForm() {
-  return (
-    <div>
-      <div>Television Shows Form Header</div>
-      <div>Television Shows Form</div>
-    </div>
-  );
-}
-
-function VideoGameForm() {
-  return (
-    <div>
-      <div>Video Game Form Header</div>
-      <div>Video Game Form</div>
-    </div>
-  );
-}

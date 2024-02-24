@@ -1,12 +1,17 @@
 .modal-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
   position: absolute;
-  top: 10vh;
-  left: 10%;
+
+  top: 15vh;
+  left: 15%;
 
   padding: var(--desktop-padding);
 
-  height: 80vh;
-  width: 80%;
+  height: 70vh;
+  width: 70%;
 
   border-radius: 25px;
   border: 2px solid var(--grey);
